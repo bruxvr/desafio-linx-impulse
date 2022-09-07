@@ -1,13 +1,23 @@
-import { Button } from "../Button"
+import { Button } from "../Button";
+import { HeaderStyle } from "./style";
 
-
-export function Header () {
+export function Header() {
   return (
-    <header>
-      <h1>Header</h1>
-      <Button>qualquer coisa</Button>
-      <Button>hello gabriel</Button>
-
-    </header>
-  )
+    <HeaderStyle>
+      <section className="header-desc">
+        <h2>uma seleção de produtos</h2>
+        <h1>especial para você</h1>
+        <h3>
+          Todos os produtos desta lista foram selecionados a partir da sua
+          navegação. Aproveite!
+        </h3>
+      </section>
+      <section className="btn-header">
+        <Button>Conheça a Linx</Button>
+        <Button>Ajude o algoritmo</Button>
+        <Button>Seus produtos</Button>
+        <Button>Compartilhe</Button>
+      </section>
+    </HeaderStyle>
+  );
 }
