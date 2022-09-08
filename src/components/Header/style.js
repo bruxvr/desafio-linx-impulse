@@ -31,9 +31,21 @@ export const HeaderStyle = styled.header`
     }
 
     .btn-header {
+        display: flex;
         margin-top: 40px;
+        justify-content: center;
+        gap: 2rem;
+        font-size: 14px;
+        color: #888888;
         
         
+    }
+    
+    Button {
+        color: #707070;
+        background-color: #FFFFFF;
+        border: none;
+        border-radius: 5px;
     }
 
 

@@ -1,4 +1,4 @@
-import { Button } from "../Button";
+import { ButtonStyle } from "../Button/style";
 import { HeaderStyle } from "./style";
 
 export function Header() {
@@ -13,10 +13,10 @@ export function Header() {
         </h3>
       </section>
       <section className="btn-header">
-        <Button>Conheça a Linx</Button>
-        <Button>Ajude o algoritmo</Button>
-        <Button>Seus produtos</Button>
-        <Button>Compartilhe</Button>
+        <ButtonStyle>Conheça a Linx</ButtonStyle>
+        <ButtonStyle>Ajude o algoritmo</ButtonStyle>
+        <ButtonStyle>Seus produtos</ButtonStyle>
+        <ButtonStyle>Compartilhe</ButtonStyle>
       </section>
     </HeaderStyle>
   );
