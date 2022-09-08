@@ -29,21 +29,25 @@ export function Description() {
         <form>
           <div className="input-container">
             <div className="input-name">
-              <label htmlFor="name">Seu nome</label>
+              <label htmlFor="name">Seu nome:</label>
               <input type="text" name="name" />
             </div>
             <div className="input-email">
-              <label htmlFor="email">E-mail</label>
+              <label htmlFor="email">E-mail:</label>
               <input type="email" name="CPF" />
             </div>
             <div className="input-cpf">
-              <label htmlFor="CPF">CPF</label>
+              <label htmlFor="CPF">CPF:</label>
               <input type="cpf" name="CPF" />
             </div>
           </div>
           <div className="radio-btn">
-            <input type="radio" value="Masculino" name="gender" /> Masculino
-            <input type="radio" value="Feminino" name="gender" /> Feminino
+            <div className="radio-btn-m">
+              <input type="radio" value="Masculino" name="gender" /> Masculino
+            </div>
+            <div className="radio-btn-f">
+              <input type="radio" value="Feminino" name="gender" /> Feminino
+            </div>
           </div>
           <button type="submit">Enviar</button>
         </form>
