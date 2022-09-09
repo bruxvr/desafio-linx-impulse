@@ -11,7 +11,7 @@ function Home () {
       <Header />
       <Description />
       <Divider>Sua seleção especial</ Divider>
-      {/* <Products /> */}
+      <Products />
     </>
   )
 }
