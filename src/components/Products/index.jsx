@@ -1,45 +1,43 @@
+import { useState, useEffect } from "react";
 import { Button } from "../Button/style";
 import { ProductCard } from "../ProductCard";
 import { ProductsStyle } from "./style";
 
-
 export function Products() {
-    return (
-      <ProductsStyle>
-        <div className="products-box">
+  const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
+  const url = `https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=${page}`;
+
+  const getApi = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    setProducts([...products, ...data.products]);
+    setPage(page + 1);
+  };
+
+  useEffect(() => {
+    getApi();
+  }, []);
+
+  return (
+    <ProductsStyle>
+      <div className="products-box">
+        {products.map((product) => (
           <ProductCard
-            image={'https://miro.medium.com/max/1280/0*i1v1In2Tn4Stnwnl.jpg'}
-            name={'teste'}
-            desc={'lorem ipsum amoisdkjoiaks aojsodijma lorem ipsum pldmesoigm'}
-            oldPrice={'caro'}
-            newPrice={'ainda caro'}
-            parcelPrice={'caro parcelado'}
+            image={product.image}
+            name={product.name}
+            desc={product.desc}
+            oldPrice={`De: R$${product.oldPrice},00`}
+            newPrice={`Por: R$${product.price},00`}
+            parcelPrice={`ou ${product.installments.count}x de R$${product.installments.value}0`}
           />
-          <ProductCard
-            image={'https://miro.medium.com/max/1280/0*i1v1In2Tn4Stnwnl.jpg'}
-            name={'teste'}
-            desc={'lorem ipsum amoisdkjoiaks aojsodijma lorem ipsum pldmesoigm'}
-            oldPrice={'caro'}
-            newPrice={'ainda caro'}
-            parcelPrice={'caro parcelado'}
-          />
-          <ProductCard
-            image={'https://miro.medium.com/max/1280/0*i1v1In2Tn4Stnwnl.jpg'}
-            name={'teste'}
-            desc={'lorem ipsum amoisdkjoiaks aojsodijma lorem ipsum pldmesoigm'}
-            oldPrice={'caro'}
-            newPrice={'ainda caro'}
-            parcelPrice={'caro parcelado'}
-          />
-          <ProductCard
-            image={'https://miro.medium.com/max/1280/0*i1v1In2Tn4Stnwnl.jpg'}
-            name={'teste'}
-            desc={'lorem ipsum amoisdkjoiaks aojsodijma lorem ipsum pldmesoigm'}
-            oldPrice={'caro'}
-            newPrice={'ainda caro'}
-            parcelPrice={'caro parcelado'}
-          />
-        </div>
-      </ProductsStyle>
-    )
+        ))}
+      </div>
+      <div className="btn-products">
+        <Button width={260} height={40} onClick={getApi}>
+          Ainda mais produtos aqui!
+        </Button>
+      </div>
+    </ProductsStyle>
+  );
 }
