@@ -40,13 +40,4 @@ export const HeaderStyle = styled.header`
         
         
     }
-    
-    Button {
-        color: #707070;
-        background-color: #FFFFFF;
-        border: none;
-        border-radius: 5px;
-    }
-
-
 `;
