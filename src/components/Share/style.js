@@ -44,5 +44,8 @@ export const ShareStyle = styled.div`
 
     Button {
         font-size: 15px;
+        margin-top: 2rem;
+        height: 40px;
+
     }
 `
