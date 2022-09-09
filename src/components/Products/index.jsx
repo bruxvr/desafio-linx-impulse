@@ -24,6 +24,7 @@ export function Products() {
       <div className="products-box">
         {products.map((product) => (
           <ProductCard
+            key={product.id}
             image={product.image}
             name={product.name}
             desc={product.desc}
