@@ -3,8 +3,7 @@ import { Description } from "../../components/Description"
 import { Divider } from "../../components/Divider"
 import { Products } from "../../components/Products"
 import { Share } from "../../components/Share"
-
-
+import { Footer } from "../../components/Footer"
 
 function Home () {
   return (
@@ -15,6 +14,7 @@ function Home () {
       <Products />
       <Divider>Compartilhe a novidade</ Divider>
       <Share />
+      <Footer />
 
     </>
   )
