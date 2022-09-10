@@ -30,15 +30,15 @@ export function Description() {
           <div className="input-container">
             <div className="input-name">
               <label htmlFor="name">Seu nome:</label>
-              <input type="text" name="name" />
+              <input type="text" name="name" required />
             </div>
             <div className="input-email">
               <label htmlFor="email">E-mail:</label>
-              <input type="email" name="CPF" />
+              <input type="email" name="CPF" required />
             </div>
             <div className="input-cpf">
               <label htmlFor="CPF">CPF:</label>
-              <input type="cpf" name="CPF" />
+              <input type="text" name="CPF" required />
             </div>
           </div>
           <div className="radio-btn">
